@@ -1,0 +1,30 @@
+{
+  "id": "1789321",
+  "name": "bookkeeping",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "6367735",
+      "name": "plus",
+      "font_class": "plus",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "9747998",
+      "name": "明细",
+      "font_class": "mingxi",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "13959220",
+      "name": "user",
+      "font_class": "user",
+      "unicode": "e720",
+      "unicode_decimal": 59168
+    }
+  ]
+}
