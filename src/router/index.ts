@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router';
 import DetailsContainer from '@/views/details/indexContainer.vue';
 import BookDownContainer from '@/views/bookDown/indexContainer.vue';
 import MeContainer from '@/views/me/indexContainer.vue';
+import ProfileContainer from '@/views/profile/indexContainer.vue';
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,10 @@ const routes: Array<RouteConfig> = [
   {
     path: '/me',
     component: MeContainer
+  },
+  {
+    path: '/profile',
+    component: ProfileContainer
   }
 ];
 

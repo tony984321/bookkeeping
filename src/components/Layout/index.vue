@@ -1,16 +1,13 @@
 <template>
-  <Menu />
+  <div>
+    <slot/>
+    <AwesomeMenu />
+  </div>
 </template>
 
 <script lang="ts">
-  import Menu from './Menu/index.vue';
-
   export default {
-    name: "layout",
-    components: { Menu }
-  }
+    name: 'Layout',
+  };
 </script>
 
-<style scoped lang="scss">
-
-</style>

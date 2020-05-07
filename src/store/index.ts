@@ -1,15 +1,39 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from 'vue';
+import Vuex from 'vuex';
+import { RootState } from "@/interfaces/rootState";
+import { Profile } from "@/interfaces/me";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
-export default new Vuex.Store({
+ const store = new Vuex.Store({
   state: {
-  },
+    details: [],
+    profile: undefined
+  } as unknown as RootState,
+
   mutations: {
+    fetchProfile(state) {
+      const storedProfile = window.localStorage.getItem('profile');
+      const defaultProfile: Profile = {
+        displayName: undefined,
+        avatar: undefined,
+        gender: "男",
+        description: undefined
+      };
+
+      state.profile = typeof storedProfile === 'string' ? JSON.parse(storedProfile) : defaultProfile;
+    },
+
+    saveProfile(state, profile: Profile) {
+      state.profile = profile;
+
+      window.localStorage.setItem('profile', JSON.stringify(state.profile));
+    },
+
+    fetchDetails(state) {
+      state.details = JSON.parse(window.localStorage.getItem('details') || '[]');
+    }
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+});
+
+export default store;
