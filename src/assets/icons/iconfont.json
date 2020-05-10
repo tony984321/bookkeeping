@@ -6,6 +6,104 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "67770",
+      "name": "餐饮",
+      "font_class": "iconfontcanyin",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "3190353",
+      "name": "工资 ",
+      "font_class": "gongzizhuanhuan",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "3496209",
+      "name": "蔬菜 (1)",
+      "font_class": "shucai",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    },
+    {
+      "icon_id": "6605301",
+      "name": "兼职",
+      "font_class": "jianzhi",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "6605308",
+      "name": "礼金",
+      "font_class": "lijin",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "6605312",
+      "name": "零食",
+      "font_class": "lingshi",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
+      "icon_id": "6932629",
+      "name": "水果",
+      "font_class": "shuiguo",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "8596187",
+      "name": "交通",
+      "font_class": "jiaotong",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "9496823",
+      "name": "购物",
+      "font_class": "gouwu",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "9802616",
+      "name": "奖金",
+      "font_class": "jiangjin",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "10102618",
+      "name": "健身",
+      "font_class": "jianshen",
+      "unicode": "e9a9",
+      "unicode_decimal": 59817
+    },
+    {
+      "icon_id": "10977404",
+      "name": "微商",
+      "font_class": "weishang",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "12625185",
+      "name": "报销",
+      "font_class": "baoxiao",
+      "unicode": "e730",
+      "unicode_decimal": 59184
+    },
+    {
+      "icon_id": "14086343",
+      "name": "日用 copy 2",
+      "font_class": "riyongcopy2",
+      "unicode": "e60b",
+      "unicode_decimal": 58891
+    },
+    {
       "icon_id": "14190894",
       "name": "类别",
       "font_class": "leibie",

@@ -30,7 +30,7 @@
     }
 
     created() {
-      this.$store.commit('fetchProfile');
+      this.$store.commit('profile/fetchProfile');
     }
 
     changeImage(e: HTMLInputEvent) {
@@ -66,7 +66,7 @@
     }
 
     @Watch('profile', { deep: true }) onProfileChanged() {
-      this.$store.commit('saveProfile', this.profile);
+      this.$store.commit('profile/saveProfile', this.profile);
     }
   }
 </script>

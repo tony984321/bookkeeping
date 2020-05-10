@@ -1,16 +1,18 @@
 <template>
-  <div class="menu">
-    <div class="semiCircle"></div>
-    <div
-      v-for="(m, index) in menu"
-      :key="index"
-      class="wrapper"
-      :data-icon="m.icon"
-    >
-      <router-link :to="m.path()" active-class="active">
-        <i :class="`iconfont icon-${m.icon}`"></i>
-        {{m.title}}
-      </router-link>
+  <div class="menuContainer">
+    <div class="circle"></div>
+    <div class="menu">
+      <div
+        v-for="(m, index) in menu"
+        :key="index"
+        class="wrapper"
+        :data-icon="m.icon"
+      >
+        <router-link :to="m.path()" active-class="active">
+          <i :class="`iconfont icon-${m.icon}`"></i>
+          {{m.title}}
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -34,55 +36,57 @@
 <style scoped lang="scss">
   @import "../../assets/css/color";
 
-  .menu {
-    width: 100%;
-    height: 60px;
-    background: #fff;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    z-index: 100;
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  .menuContainer {
 
-    .wrapper {
-      text-align: center;
-      position: relative;
-      z-index: 1;
+    .circle {
+      width: 60px;
+      height: 60px;
+      position: fixed;
+      border-radius: 50%;
+      background: #fff;
+      left: 50%;
+      bottom: 30px;
+      margin-left: -30px;
+      z-index: 99;
+    }
 
-      i {
-        display: block;
-        font-size: 14px;
-      }
+    .menu {
+      width: 100%;
+      height: 60px;
+      background: #fff;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
 
-      &[data-icon = "plus"] {
+      .wrapper {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+
         i {
-          font-size: 50px;
-          color: $main_color;
-          margin-top: -18px;
-          margin-left: 2px;
-          margin-bottom: 18px;
+          display: block;
+          font-size: 14px;
+        }
+
+        &[data-icon = "plus"] {
+          i {
+            font-size: 50px;
+            color: $main_color;
+            margin-top: -18px;
+            margin-left: 2px;
+            margin-bottom: 18px;
+          }
         }
       }
+
+      .active {
+        color: $main_color;
+      }
     }
 
-    .active {
-      color: $main_color;
-    }
-
-    .semiCircle {
-      width: 60px;
-      height: 30px;
-      position: absolute;
-      border-radius: 30px 30px 0 0;
-      background: #fff;
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
-      left: 50%;
-      top: 0;
-      margin-left: -30px;
-      margin-top: -30px;
-    }
   }
 </style>

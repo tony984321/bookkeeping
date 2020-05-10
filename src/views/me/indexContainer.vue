@@ -23,8 +23,8 @@
     }
 
     created() {
-      this.$store.commit('fetchProfile');
-      this.$store.commit('fetchDetails');
+      this.$store.commit('profile/fetchProfile');
+      this.$store.commit('details/fetchDetails');
     }
   }
 </script>

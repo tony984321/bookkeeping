@@ -5,8 +5,14 @@ export interface Profile {
   description?: string;
 }
 
-export interface Categories {
-  id: number;
+export interface Category {
+  id?: string;
   title: string;
   icon: string;
+  type: CategoryType
+}
+
+export enum CategoryType {
+  INCOME = 'income',
+  EXPENDITURE = 'expenditure',
 }
