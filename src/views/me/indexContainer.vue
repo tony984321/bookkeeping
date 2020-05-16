@@ -16,10 +16,10 @@
 
   export default class MeContainer extends Vue {
     get profile() {
-      return this.$store.state.profile;
+      return this.$store.state.profile.profile;
     }
     get details() {
-      return this.$store.state.details;
+      return this.$store.state.details.details;
     }
 
     created() {

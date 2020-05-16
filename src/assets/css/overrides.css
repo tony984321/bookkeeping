@@ -19,6 +19,8 @@ input, button {
 
 ol, ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 table {
@@ -40,7 +42,7 @@ body {
 }
 
 .btn-primary {
-  background: #8a6af5;
+  background: #8a6af5 !important;
 }
 
 .btn-secondary {

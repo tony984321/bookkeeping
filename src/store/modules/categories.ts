@@ -27,7 +27,7 @@ const actions = {
 
   updateCategory({ state, commit }: RootModules, category: Category) {
     const index = state.categories.findIndex((c: Category) => c.id === category.id);
-    let newCategories = [...state.categories];
+    const newCategories = [...state.categories];
     const rest = newCategories.filter((c: Category) => c.id !== category.id);
     const titles = rest.map(c => c.title);
     const icons = rest.map(c => c.icon);

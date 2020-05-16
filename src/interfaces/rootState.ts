@@ -1,11 +1,11 @@
 import { Profile } from "@/interfaces/me";
-import { Details } from "@/interfaces/details";
+import { Detail } from "@/interfaces/details";
 import { Category } from "@/interfaces/me";
 
 export interface RootState {
-  details: Details[];
+  details: Detail[];
   profile?: Profile;
-  categories: Category[]
+  categories: Category[];
 }
 
 export interface RootModules {

@@ -9,7 +9,7 @@ export interface Category {
   id?: string;
   title: string;
   icon: string;
-  type: CategoryType
+  type: CategoryType;
 }
 
 export enum CategoryType {

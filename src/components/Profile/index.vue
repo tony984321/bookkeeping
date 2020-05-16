@@ -12,29 +12,49 @@
 
       <div class="avatar"  @click="upLoad">
         <div>头像</div>
-        <img :src="profile.avatar || defaultAvatar" alt="avatar" />
+        <div class="d-flex align-items-center">
+          <img :src="profile.avatar || defaultAvatar" alt="avatar" class="mr-2" />
+          <i class="fas fa-chevron-right"></i>
+        </div>
       </div>
 
       <div class="displayName">
         <div>昵称</div>
-        <input
-          type="text"
-          @change="changeName($event)"
-          name="displayName"
-          :value="profile.displayName"
-          placeholder="请输入昵称"
-        />
+        <div class="d-flex align-items-center w-75 justify-content-end">
+          <b-form-input
+            v-model="displayName"
+            placeholder="请输入昵称"
+            @change="changeName()"
+          ></b-form-input>
+          <i class="fas fa-chevron-right"></i>
+        </div>
       </div>
 
       <div class="description">
         <div>描述</div>
-        <input
-          type="text"
-          @change="changeDescription($event)"
-          name="description"
-          :value="profile.description"
-          placeholder="请用一句话描述你自己"
-        />
+        <div class="d-flex align-items-center w-75 justify-content-end">
+          <b-form-input
+            type="text"
+            v-model="description"
+            placeholder="请用一句话描述你自己"
+            @change="changeDescription()"
+          ></b-form-input>
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+
+      <div class="gender">
+        <div>性别</div>
+        <div class="d-flex align-items-center w-75 justify-content-end">
+          <b-form-group>
+            <b-form-radio-group
+              v-model="gender"
+              :options="['男', '女']"
+              @change="changeGender($event)"
+            ></b-form-radio-group>
+          </b-form-group>
+          <i class="fas fa-chevron-right"></i>
+        </div>
       </div>
     </div>
   </div>
@@ -51,22 +71,25 @@
   export default class ProfileForm extends Vue {
     @Prop() readonly profile!: Profile;
 
+    displayName?: string = this.profile.displayName;
+    description?: string = this.profile.description;
+    gender?: string = this.profile.gender;
     defaultAvatar = require('../../assets/images/default-avatar.png');
 
     changeImage(e: HTMLInputEvent) {
       this.$emit('changeImage', e);
     }
 
-    changeName(e: HTMLInputEvent) {
-      this.$emit('changeName', e);
+    changeName() {
+      this.$emit('changeName', this.displayName);
     }
 
     changeGender(e: HTMLInputEvent) {
       this.$emit('changeGender', e);
     }
 
-    changeDescription(e: HTMLInputEvent) {
-      this.$emit('changeDescription', e);
+    changeDescription() {
+      this.$emit('changeDescription', this.description);
     }
 
     upLoad() {
@@ -89,7 +112,7 @@
     %inputWrapper {
       width: 100%;
       background: #fff;
-      padding: 10px 30px 10px 10px;
+      padding: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -97,19 +120,24 @@
       margin: 5px 0;
       position: relative;
 
-      &::before {
-        content: "\f054";
-        font-family: FontAwesome;
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        margin-top: -10px;
+      .form-group {
+        margin-bottom: 0;
+      }
+
+      svg {
         color: #b5b5b5;
       }
 
       input {
+        width: 80%;
+        border: none;
         text-align: right;
-        outline: none;
+
+        &:focus {
+          border-color: #fff;
+          webkit-box-shadow: none;
+          box-shadow: none;
+        }
       }
     }
 
@@ -129,11 +157,10 @@
 
     .description {
       @extend %inputWrapper;
+    }
 
-      input {
-        width: 80%;
-        outline: none;
-      }
+    .gender {
+      @extend %inputWrapper;
     }
   }
 </style>

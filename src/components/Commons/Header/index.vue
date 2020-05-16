@@ -1,6 +1,6 @@
 <template>
    <div class="headerWrapper">
-     <div class="back" @click="onBack">
+     <div class="back" @click="onBack" v-if="!removeBackArrow">
        <i class="fas fa-chevron-left"></i>
      </div>
      {{title}}
@@ -14,6 +14,7 @@
   @Component
   export default class Header extends Vue {
     @Prop() readonly title!: string;
+    @Prop() readonly removeBackArrow!: boolean;
 
     onBack() {
       this.$router.go(-1);
@@ -22,7 +23,7 @@
 </script>
 
 <style scoped lang="scss">
-  @import "../../assets/css/color.scss";
+  @import "../../../assets/css/color";
 
   .headerWrapper {
     width: 100%;

@@ -1,6 +1,5 @@
 <template>
   <div class="menuContainer">
-    <div class="circle"></div>
     <div class="menu">
       <div
         v-for="(m, index) in menu"
@@ -13,6 +12,7 @@
           {{m.title}}
         </router-link>
       </div>
+      <div class="circle"></div>
     </div>
   </div>
 </template>
@@ -39,15 +39,14 @@
   .menuContainer {
 
     .circle {
+      position: absolute;
       width: 60px;
       height: 60px;
-      position: fixed;
       border-radius: 50%;
       background: #fff;
       left: 50%;
       bottom: 30px;
       margin-left: -30px;
-      z-index: 99;
     }
 
     .menu {
@@ -77,7 +76,7 @@
             font-size: 50px;
             color: $main_color;
             margin-top: -18px;
-            margin-left: 2px;
+            margin-left: 1px;
             margin-bottom: 18px;
           }
         }

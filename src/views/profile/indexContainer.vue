@@ -16,7 +16,7 @@
   import { Component, Watch } from "vue-property-decorator";
   import { HTMLInputEvent } from "@/interfaces/file";
   import ProfileForm from "@/components/Profile/index.vue";
-  import Header from "@/components/Header/index.vue";
+  import Header from "@/components/Commons/Header/index.vue";
 
   const accepts = ['image/gif', 'image/jpeg', 'image/png'];
 
@@ -26,7 +26,7 @@
 
   export default class ProfileContainer extends Vue {
     get profile() {
-      return this.$store.state.profile;
+      return this.$store.state.profile.profile;
     }
 
     created() {
@@ -52,17 +52,17 @@
       reader.readAsDataURL(file);
     }
 
-    changeName(e: HTMLInputEvent) {
-      if(e.target.value.length < 0) { return }
-      this.profile.displayName =  e.target.value;
+    changeName(name: string) {
+      if(name.length < 0) { return }
+      this.profile.displayName = name;
     }
 
-    changeGender(e: HTMLInputEvent) {
-      this.profile.gender =  e.target.value;
+    changeGender(gender: string) {
+      this.profile.gender = gender;
     }
 
-    changeDescription(e: HTMLInputEvent) {
-      this.profile.description =  e.target.value;
+    changeDescription(description: string) {
+      this.profile.description =  description;
     }
 
     @Watch('profile', { deep: true }) onProfileChanged() {

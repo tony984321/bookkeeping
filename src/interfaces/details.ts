@@ -1,18 +1,21 @@
-export interface Details {
-  id: number;
-  createdAt: string;
-  income: Detail[];
-  expenditure: Detail[];
-}
-
 export interface Detail {
-  id: number;
+  id?: string;
+  createdAt: Date;
   amount: number;
-  categoryId: number;
+  categoryId?: string;
+  type: string;
 }
 
 export interface Bill {
   totalIncome: number;
   totalExpenditure: number;
   profit: number;
+}
+
+export interface FormattedDetail {
+  categoryId: number;
+  date: Date;
+  items: Detail [];
+  totalIncome: number;
+  totalExpenditure: number;
 }
