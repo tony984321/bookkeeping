@@ -33,7 +33,7 @@
 <script lang="ts">
   import Vue from 'vue';
   import { Component, Prop } from "vue-property-decorator";
-  import Modal from '@/components/Commons/Modal/index.vue';
+  import Modal from '@/components/Common/Modal/index.vue';
 
   const json = require('../../../config/global.json');
 

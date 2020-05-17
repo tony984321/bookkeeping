@@ -28,7 +28,7 @@
   import { Category, CategoryType } from "@/interfaces/me";
   import NewModal from "./NewModal/index.vue";
   import CategoryItem from "./Item/index.vue";
-  import CategoryTypeTab from "@/components/Commons/TypeTab/index.vue";
+  import CategoryTypeTab from "@/components/Common/TypeTab/index.vue";
 
   @Component({
     components: { NewModal, CategoryItem, CategoryTypeTab }

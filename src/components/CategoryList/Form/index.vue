@@ -21,7 +21,7 @@
 <script lang="ts">
   import Vue from 'vue';
   import { Component, Prop } from "vue-property-decorator";
-  import IconSelector from "@/components/Commons/IconSelector/index.vue";
+  import IconSelector from "@/components/Common/IconSelector/index.vue";
 
   @Component({
     components: { IconSelector }

@@ -7,16 +7,17 @@
       @changeName="changeName"
       @changeGender="changeGender"
       @changeDescription="changeDescription"
+      @saveProfile="saveProfile"
     />
   </div>
 </template>
 
 <script lang="ts">
   import Vue from 'vue';
-  import { Component, Watch } from "vue-property-decorator";
+  import { Component } from "vue-property-decorator";
   import { HTMLInputEvent } from "@/interfaces/file";
   import ProfileForm from "@/components/Profile/index.vue";
-  import Header from "@/components/Commons/Header/index.vue";
+  import Header from "@/components/Common/Header/index.vue";
 
   const accepts = ['image/gif', 'image/jpeg', 'image/png'];
 
@@ -65,8 +66,9 @@
       this.profile.description =  description;
     }
 
-    @Watch('profile', { deep: true }) onProfileChanged() {
+    saveProfile() {
       this.$store.commit('profile/saveProfile', this.profile);
+      alert('保存成功')
     }
   }
 </script>

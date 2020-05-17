@@ -18,7 +18,7 @@
   import { Component, Prop } from "vue-property-decorator";
   import { Category, CategoryType } from "@/interfaces/me";
   import CategoryForm from "../Form/index.vue";
-  import Modal from '@/components/Commons/Modal/index.vue';
+  import Modal from '@/components/Common/Modal/index.vue';
 
   @Component({
     components: { CategoryForm, Modal }

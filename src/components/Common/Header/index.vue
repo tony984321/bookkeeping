@@ -4,6 +4,7 @@
        <i class="fas fa-chevron-left"></i>
      </div>
      {{title}}
+     <slot />
    </div>
 </template>
 
@@ -36,6 +37,7 @@
     line-height: 49px;
     font-size: 18px;
     color: #fff;
+    z-index: 100000;
 
     .back {
       position: absolute;

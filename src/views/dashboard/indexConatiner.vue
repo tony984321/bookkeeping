@@ -1,13 +1,7 @@
 <template>
   <div>
-    <Header title="账目明细" :removeBackArrow="true" >
-      <div class="dashboardIcon">
-        <router-link :to="dashboardPath()">
-          <i class="fas fa-chart-line"></i>
-        </router-link>
-      </div>
-    </Header>
-    <Details
+    <Header title="数据统计" :removeBackArrow="false" />
+    <Dashboard
       :categories.sync="categories"
       :details.sync="details"
     />
@@ -17,15 +11,14 @@
 <script lang="ts">
   import Vue from 'vue';
   import { Component } from "vue-property-decorator";
-  import Details from "@/components/Details/index.vue";
   import Header from "@/components/Common/Header/index.vue";
-  import { indexPath as dashboardPath } from "@/router/dashboard/dashboardRouter";
+  import Dashboard from "@/components/Dashboard/index.vue";
 
   @Component({
-    components: { Details, Header }
+    components: { Header, Dashboard }
   })
 
-  export default class DetailsContainer extends Vue {
+  export default class DashboardContainer extends Vue {
     get categories() {
       return this.$store.state.categories.categories;
     }
@@ -33,8 +26,6 @@
     get details() {
       return this.$store.state.details.details;
     }
-
-    dashboardPath: () => void  = dashboardPath;
 
     created() {
       this.$store.commit('categories/fetchCategories');
@@ -45,11 +36,4 @@
 
 <style scoped lang="scss">
   @import "../../assets/css/color";
-
-  .dashboardIcon {
-    position: absolute;
-    right: 20px;
-    top: 0;
-    color: #fff;
-  }
 </style>

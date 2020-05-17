@@ -36,7 +36,7 @@
   import Vue from 'vue';
   import { Component } from 'vue-property-decorator';
   import { format } from "date-fns";
-  import Calendar from "../../Commons/Calendar/index.vue";
+  import Calendar from "../../Common/Calendar/index.vue";
 
   @Component({
     components: { Calendar }

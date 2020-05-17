@@ -24,7 +24,7 @@
   import Vue from 'vue';
   import { Component, Prop } from "vue-property-decorator";
   import { Category, CategoryType } from "@/interfaces/me";
-  import TypeTab from "@/components/Commons/TypeTab/index.vue";
+  import TypeTab from "@/components/Common/TypeTab/index.vue";
   import Categories from "./Categories/index.vue";
   import KeyBoard from "./KeyBoard/index.vue";
   import { Detail } from "@/interfaces/details";

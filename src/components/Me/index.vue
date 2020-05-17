@@ -20,8 +20,8 @@
   import { Detail } from "@/interfaces/details";
   import { Component, Prop } from "vue-property-decorator";
   import Header from "./Header/index.vue";
-  import MonthlyBill from "../Commons/MonthlyBill/index.vue";
-  import SettingItem from "../Commons/SettingItem/index.vue";
+  import MonthlyBill from "../Common/MonthlyBill/index.vue";
+  import SettingItem from "../Common/SettingItem/index.vue";
   import {
     indexPath as categorySettingIndexPath
   } from "../../router/categorySetting/categorySettingRoutes";

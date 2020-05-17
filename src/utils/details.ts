@@ -1,7 +1,8 @@
-import {Bill, Detail, FormattedDetail} from "@/interfaces/details";
-import {format, getMonth, getYear} from "date-fns";
+import { Bill, CategoryAmount, Detail, FormattedDetail } from "@/interfaces/details";
+import { format, getMonth, getYear } from "date-fns";
 // @ts-ignore
-import {groupBy, omit, sum, sumBy, sortBy} from 'lodash';
+import { groupBy, omit, sum, sumBy, sortBy } from 'lodash';
+import { Category } from "@/interfaces/me";
 
 export const getMonthlyDetails = (details: Detail[], month: number, year: number) => {
   if (details.length) {
@@ -46,4 +47,19 @@ export const getMonthlyBill = (details: Detail[]) => {
   const profit = totalIncome - totalExpenditure;
 
   return { totalIncome, totalExpenditure, profit } as Bill
+};
+
+export const getDetailsByCategory = (details: Detail[], categories: Category[]) => {
+  if(details.length === 0) { return [] }
+
+  const groupByCategory = groupBy(details, 'categoryId');
+
+  const totalAmountByCategory = Object.keys(groupByCategory).map(id => {
+    const category = categories.find(c => c.id === id);
+    const totalAmountByCategory = sumBy(groupByCategory[id], 'amount');
+
+    return { category, totalAmount: totalAmountByCategory } as CategoryAmount
+  });
+
+  return sortBy(totalAmountByCategory, 'totalAmount').reverse();
 };

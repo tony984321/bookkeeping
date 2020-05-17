@@ -2,7 +2,9 @@
   <div class="meHeader">
     <div class="wrapper">
       <router-link :to="profilePath()">
-        <img :src="avatar" alt="avatar" />
+        <div class="avatar">
+          <img :src="avatar" alt="avatar" />
+        </div>
         <div v-if="profile.displayName">
           <div class="name">{{profile.displayName}}</div>
         </div>
@@ -46,13 +48,23 @@
 
     .wrapper {
       width: 100%;
-      text-align: center;
 
-      img {
+      .avatar {
         width: 80px;
         height: 80px;
         border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: 2px solid #fff;
+        margin: 0 auto;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       .name {

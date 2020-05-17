@@ -9,7 +9,7 @@
   import Vue from 'vue';
   import { Component } from "vue-property-decorator";
   import BookDown from "@/components/BookDown/index.vue";
-  import Header from "@/components/Commons/Header/index.vue";
+  import Header from "@/components/Common/Header/index.vue";
 
   @Component({
     components: { BookDown, Header }

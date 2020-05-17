@@ -5,6 +5,7 @@ import BookDownContainer from '@/views/bookDown/indexContainer.vue';
 import MeContainer from '@/views/me/indexContainer.vue';
 import ProfileContainer from '@/views/profile/indexContainer.vue';
 import CategorySettingContainer from '@/views/categorySetting/indexContainer.vue';
+import DashboardContainer from '@/views/dashboard/indexConatiner.vue';
 
 Vue.use(VueRouter);
 
@@ -35,8 +36,13 @@ const routes: Array<RouteConfig> = [
   },
   {
     path: '/category_setting',
-    name: '/category_setting',
+    name: 'category_setting',
     component: CategorySettingContainer
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: DashboardContainer
   }
 ];
 

@@ -40,7 +40,7 @@
   import { getMonth, getYear } from "date-fns";
   import { getMonthlyBill, getMonthlyDetails } from "@/utils/details";
   import { format } from "@/utils/number";
-  import Calendar from "../../Commons/Calendar/index.vue";
+  import Calendar from "../Calendar/index.vue";
 
   @Component({
     components: { Calendar }

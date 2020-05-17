@@ -10,10 +10,12 @@
         ref="avatarInput"
       />
 
-      <div class="avatar"  @click="upLoad">
+      <div class="avatarWrapper"  @click="upLoad">
         <div>头像</div>
         <div class="d-flex align-items-center">
-          <img :src="profile.avatar || defaultAvatar" alt="avatar" class="mr-2" />
+          <div class="avatar mr-2">
+            <img :src="profile.avatar || defaultAvatar" alt="avatar" />
+          </div>
           <i class="fas fa-chevron-right"></i>
         </div>
       </div>
@@ -57,6 +59,10 @@
         </div>
       </div>
     </div>
+
+    <div class="save" @click="onSave()">
+      保存
+    </div>
   </div>
 </template>
 
@@ -71,9 +77,9 @@
   export default class ProfileForm extends Vue {
     @Prop() readonly profile!: Profile;
 
-    displayName?: string = this.profile.displayName;
-    description?: string = this.profile.description;
-    gender?: string = this.profile.gender;
+    displayName: string | null = this.profile.displayName || null;
+    description: string | null = this.profile.description || null;
+    gender: string | undefined = this.profile.gender;
     defaultAvatar = require('../../assets/images/default-avatar.png');
 
     changeImage(e: HTMLInputEvent) {
@@ -94,6 +100,10 @@
 
     upLoad() {
       (<any>this.$refs.avatarInput).dispatchEvent(new MouseEvent("click"));
+    }
+
+    onSave() {
+      this.$emit('saveProfile')
     }
   }
 </script>
@@ -141,13 +151,23 @@
       }
     }
 
-    .avatar {
+    .avatarWrapper {
       @extend %inputWrapper;
 
-      img {
+      .avatar {
         width: 50px;
         height: 50px;
         border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
 
@@ -161,6 +181,18 @@
 
     .gender {
       @extend %inputWrapper;
+    }
+
+    .save {
+      width: 90%;
+      background: $main_color;
+      color: #fff;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 50px auto 0;
     }
   }
 </style>

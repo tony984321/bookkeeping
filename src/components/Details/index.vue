@@ -18,7 +18,7 @@
   import { Component, Prop } from "vue-property-decorator";
   import { Category } from "@/interfaces/me";
   import { Detail } from "@/interfaces/details";
-  import MonthlyBill from "../Commons/MonthlyBill/index.vue";
+  import MonthlyBill from "../Common/MonthlyBill/index.vue";
   import Collection from "./Collection/index.vue";
   import { getMonth, getYear } from "date-fns";
   import { getMonthlyDetails, getFormattedDetails } from "@/utils/details";

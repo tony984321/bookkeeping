@@ -1,3 +1,5 @@
+import { Category } from "@/interfaces/me";
+
 export interface Detail {
   id?: string;
   createdAt: Date;
@@ -18,4 +20,9 @@ export interface FormattedDetail {
   items: Detail [];
   totalIncome: number;
   totalExpenditure: number;
+}
+
+export interface CategoryAmount {
+  category: Category;
+  totalAmount: number;
 }
